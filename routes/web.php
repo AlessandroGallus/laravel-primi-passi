@@ -14,5 +14,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data = [
+        'lista' => [
+            "studente1" =>[
+                "nome" => "Alessandro",
+                "cognome" => "Gallus",
+                "classe" => "A"
+            ],
+            "studente2" =>[
+                "nome" => "Luca",
+                "cognome" => "Logallo",
+                "classe" => "B"
+            ],
+            "studente3" =>[
+                "nome" => "Donata",
+                "cognome" => "Casalini",
+                "classe" => "A"
+            ],
+        ]
+    ];
+    return view('home', $data);
+});
+Route::get('/pagina2', function () {
+    return view('pagina2');
 });
